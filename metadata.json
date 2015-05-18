@@ -1,6 +1,6 @@
 {
   "name": "danieldreier-resource_facts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "danieldreier",
   "summary": "Provide current state of all puppet resources as a huge structured fact",
   "license": "Apache-2.0",
@@ -39,5 +39,4 @@
       "version_requirement": "4.x"
     }
   ]
-
 }
