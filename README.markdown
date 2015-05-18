@@ -127,3 +127,8 @@ puppet config set factpath /var/lib/puppet/lib/facter:/etc/puppet/modules/resour
 * PuppetDB will store a lot more data if you use a lot of resource facts
 * resource facts can only track facts that are enumerable
 * Keep in mind what secrets may be put in puppetdb; the user resource shows password hashes
+
+If you write code expecting a resource fact to exist and that causes
+compilation to fail, that can prevent the resource fact to never be configured,
+permanently breaking compiles. You *must* code defensively and handle the case
+where the resource is not listed in the `$::resources` hash yet.
