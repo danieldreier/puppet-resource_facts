@@ -15,8 +15,8 @@ resources you can enumerate with the `puppet resource` command.
 For example, to set the `resource` fact to list all mounts and all users:
 
 ```puppet
-factery::resource_fact { 'mount': }
-factery::resource_fact { 'user': }
+resource_facts::resource { 'mount': }
+resource_facts::resource { 'user': }
 ```
 
 The mounts would be listed in a structured fact something like:
@@ -93,7 +93,7 @@ can't just enable purge on all unmanaged `ec2_instance` resources because
 no individual node is aware of all of them, and you're willing to tolerate
 manually-provisioned nodes so long as they comply with your tagging rules.
 
-If you track `ec2_instance` resources with factery, and you grok puppet 4
+If you track `ec2_instance` resources with resource facts, and you grok puppet 4
 iteration, you're in luck. You can iterate over the `resources['ec2_instance']`
 structured fact, select resources that do not include the correct data in the
 `tags` parameter, and define new `ec2_instance` resources with those nodes set
@@ -109,7 +109,7 @@ puppet module install danieldreier/resource_facts
 ```
 
 ```puppet
-factery::resource_fact { 'mount': }
+resource_facts:resource { 'mount': }
 ```
 
 After running the puppet code above, you can run `facter -p resources` to see
