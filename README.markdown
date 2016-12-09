@@ -109,7 +109,7 @@ puppet module install danieldreier/resource_facts
 ```
 
 ```puppet
-resource_facts:resource { 'mount': }
+resource_facts::resource { 'mount': }
 ```
 
 After running the puppet code above, you can run `facter -p resources` to see
